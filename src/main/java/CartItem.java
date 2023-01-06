@@ -9,13 +9,13 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    public double sumOfPriceAndQuantity(){
-        return product.getPrice()*quantity;
+    public double sumOfPriceAndQuantity() {
+        return product.getPrice() * quantity;
     }
 
     @Override
     public String toString() {
-        return this.product.getData()+" quantity:" + this.quantity;
+        return this.product.toString() + " quantity:" + this.quantity;
     }
 
     public Product getProduct() {

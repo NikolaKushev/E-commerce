@@ -9,15 +9,16 @@ public class Product {
         this.price = price;
     }
 
-    public String getData() {
-        return label+ " "+ price;
-    }//извежда информация за името и цената на продукта
-
     public double getPrice() {
         return price;
     }
 
     public String getLabel() {
         return label;
+    }
+
+    @Override
+    public String toString() {
+        return label + " " + price;
     }
 }

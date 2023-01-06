@@ -5,30 +5,25 @@ import java.util.List;
 
 public class Cart {
     private int deliveryFee;
-    List<CartItem> cartItems;
+    private List<CartItem> cartItems=new ArrayList<>();
 
-    public Cart() {
-        this.deliveryFee = deliveryFee;
-        this.cartItems = new ArrayList<>();
-    }
-
-    public double calculatePrice() {//сумира цената без ддс
+    private double calculatePrice() {
         double price = 0;
         for (CartItem cartItem : cartItems) {
-            price += cartItem.getQuantity() * cartItem.getProduct().getPrice();
+            price += cartItem.sumOfPriceAndQuantity();
         }
         return price;
     }
 
-    public double getDDS() {
+    private double getDDS() {
         return calculatePrice() * 0.2;
     }
 
-    public double finalPrice() {//сумира крайната цена
+    public double finalPrice() {
         double sumWithDDS = calculatePrice() + getDDS();
         if (sumWithDDS < 100) {
             deliveryFee = 10;
-        } else if (sumWithDDS >= 100 && sumWithDDS < 200) {
+        } else if (sumWithDDS < 200) {
             deliveryFee = 5;
         } else {
             deliveryFee = 0;
@@ -45,7 +40,7 @@ public class Cart {
         if (cartItems.isEmpty()) {
             System.out.println("Cart is empty");
         }
-        if(!cartItems.contains(cartItem)) {
+        if (!cartItems.contains(cartItem)) {
             System.out.println("Item not in cart");
         }
         cartItems.remove(cartItem);
