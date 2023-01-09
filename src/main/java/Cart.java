@@ -36,15 +36,7 @@ public class Cart {
     }
 
     public void removeItem(CartItem cartItem) {
-
-        if (cartItems.isEmpty()) {
-            System.out.println("Cart is empty");
-        }
-        if (!cartItems.contains(cartItem)) {
-            System.out.println("Item not in cart");
-        }
         cartItems.remove(cartItem);
-        System.out.println("Item removed: " + cartItem.getProduct().getLabel());
     }
 
     @Override
