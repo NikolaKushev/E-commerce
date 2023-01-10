@@ -8,6 +8,14 @@ public class Cart {
     private int deliveryFee;
     private List<CartItem> cartItems = new ArrayList<>();
 
+    public void addItem(CartItem cartItem) {
+        cartItems.add(cartItem);
+    }
+
+    public void removeItem(CartItem cartItem) {
+        cartItems.remove(cartItem);
+    }
+
     private double calculatePrice() {
         double price = 0;
         for (CartItem cartItem : cartItems) {
@@ -24,7 +32,7 @@ public class Cart {
         return calculatePrice() + calculateVat();
     }
 
-    public int calculateDeliveryFee() {
+    private int calculateDeliveryFee() {
         double sumWithVat= calculateSumWithVat();
         if (cartItems.isEmpty()) {
             deliveryFee = 0;
@@ -40,14 +48,6 @@ public class Cart {
 
     public double calculateFinalPrice() {
         return calculateSumWithVat() + calculateDeliveryFee();
-    }
-
-    public void addItem(CartItem cartItem) {
-        cartItems.add(cartItem);
-    }
-
-    public void removeItem(CartItem cartItem) {
-        cartItems.remove(cartItem);
     }
 
     @Override
