@@ -16,16 +16,16 @@ public class Cart {
         return price;
     }
 
-    private double getVat() {
+    private double calculateVat() {
         return calculatePrice() * 0.2;
     }
 
-    private double getSumWithVat() {
-        return calculatePrice() + getVat();
+    private double calculateSumWithVat() {
+        return calculatePrice() + calculateVat();
     }
 
-    public int getDeliveryFee() {
-        double sumWithVat=getSumWithVat();
+    public int calculateDeliveryFee() {
+        double sumWithVat= calculateSumWithVat();
         if (cartItems.isEmpty()) {
             deliveryFee = 0;
         }else if (sumWithVat < 100) {
@@ -38,8 +38,8 @@ public class Cart {
         return deliveryFee;
     }
 
-    public double finalPrice() {
-        return getSumWithVat() + getDeliveryFee();
+    public double calculateFinalPrice() {
+        return calculateSumWithVat() + calculateDeliveryFee();
     }
 
     public void addItem(CartItem cartItem) {
@@ -52,7 +52,7 @@ public class Cart {
 
     @Override
     public String toString() {
-        return "Total price is: " + finalPrice() + "\nDelivery fee: " + deliveryFee;
+        return "Total price is: " + calculateFinalPrice() + "\nDelivery fee: " + deliveryFee;
     }
 }
 

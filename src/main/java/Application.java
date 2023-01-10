@@ -1,7 +1,7 @@
 package main.java;
 
 public class Application {
-    
+
     public static void main(String[] args) {
 
         Product apple = new Product("apple", 3);
@@ -20,7 +20,7 @@ public class Application {
 
         cart.removeItem(apples);
 
-        cart.finalPrice();
+        cart.calculateFinalPrice();
 
         System.out.println(cart);
     }
