@@ -1,4 +1,4 @@
-package main.java;
+package main.java.euDeltaSourceInternship;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +52,7 @@ public class Cart {
 
     @Override
     public String toString() {
-        return "Total price is: " + calculateFinalPrice() + "\nDelivery fee: " + deliveryFee;
+        return "Total price is: " + calculateFinalPrice() +"lv." + "\nDelivery fee: " + deliveryFee +"lv.";
     }
 }
 
