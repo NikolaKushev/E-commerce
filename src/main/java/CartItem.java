@@ -1,6 +1,7 @@
 package main.java;
 
 public class CartItem {
+
     private Product product;
     private int quantity;
 

@@ -1,6 +1,7 @@
 package main.java;
 
 public class Product {
+
     private String label;
     private double price;
 
