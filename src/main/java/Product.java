@@ -13,10 +13,6 @@ public class Product {
         return price;
     }
 
-    public String getLabel() {
-        return label;
-    }
-
     @Override
     public String toString() {
         return label + " " + price;

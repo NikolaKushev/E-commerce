@@ -17,12 +17,4 @@ public class CartItem {
     public String toString() {
         return this.product.toString() + " quantity:" + this.quantity;
     }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
 }
